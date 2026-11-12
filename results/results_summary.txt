@@ -1,0 +1,104 @@
+MAIN RESULTS
+    scenario     model  precision   recall       f1      fpr
+Random split Threshold   0.000000 0.000000 0.000000 0.001867
+Random split        LR   0.996767 0.994565 0.995665 0.005241
+Random split        DT   0.999735 0.998807 0.999271 0.000431
+Random split        RF   0.999912 0.999161 0.999536 0.000144
+    Next day Threshold   0.205479 0.000131 0.000262 0.001128
+    Next day        LR   0.998023 0.956703 0.976926 0.004221
+    Next day        DT   0.996044 0.941019 0.967750 0.008326
+    Next day        RF   0.999326 0.931937 0.964456 0.001401
+
+PER-ATTACK RECALL ON DAY 2
+    model  attack     n   recall  seen_in_training
+Threshold     DNS  3669 0.000000             False
+Threshold    LDAP  1440 0.000000              True
+Threshold   MSSQL  6212 0.000000              True
+Threshold NETBIOS   598 0.000000              True
+Threshold     NTP 40000 0.000375             False
+Threshold    SNMP  2717 0.000000             False
+Threshold     SYN   533 0.000000              True
+Threshold    TFTP 40000 0.000000             False
+Threshold     UDP 10420 0.000000              True
+Threshold  UDPLAG  8872 0.000000              True
+Threshold WEBDDOS    51 0.000000             False
+       LR     DNS  3669 0.932134             False
+       LR    LDAP  1440 0.996528              True
+       LR   MSSQL  6212 0.999356              True
+       LR NETBIOS   598 0.988294              True
+       LR     NTP 40000 0.887125             False
+       LR    SNMP  2717 0.998528             False
+       LR     SYN   533 1.000000              True
+       LR    TFTP 40000 0.998850             False
+       LR     UDP 10420 0.999328              True
+       LR  UDPLAG  8872 0.992110              True
+       LR WEBDDOS    51 0.000000             False
+       DT     DNS  3669 0.929409             False
+       DT    LDAP  1440 0.997917              True
+       DT   MSSQL  6212 0.999678              True
+       DT NETBIOS   598 0.991639              True
+       DT     NTP 40000 0.996650             False
+       DT    SNMP  2717 0.999264             False
+       DT     SYN   533 0.369606              True
+       DT    TFTP 40000 0.998250             False
+       DT     UDP 10420 0.999520              True
+       DT  UDPLAG  8872 0.334085              True
+       DT WEBDDOS    51 0.411765             False
+       RF     DNS  3669 0.940038             False
+       RF    LDAP  1440 0.995833              True
+       RF   MSSQL  6212 0.999356              True
+       RF NETBIOS   598 0.988294              True
+       RF     NTP 40000 0.995800             False
+       RF    SNMP  2717 0.998896             False
+       RF     SYN   533 0.000000              True
+       RF    TFTP 40000 0.997150             False
+       RF     UDP 10420 0.999520              True
+       RF  UDPLAG  8872 0.246731              True
+       RF WEBDDOS    51 0.000000             False
+
+WINDOW ANALYSIS (RF, day 2)
+Empty DataFrame
+Columns: []
+Index: []
+
+TOP FEATURES (RF)
+Bwd Packets/s               0.098502
+URG Flag Count              0.095778
+Bwd Packet Length Max       0.049337
+Bwd Packet Length Mean      0.046109
+Packet Length Min           0.045225
+Fwd Packet Length Min       0.044998
+Init Bwd Win Bytes          0.041648
+Bwd Packets Length Total    0.034914
+Down/Up Ratio               0.033102
+Avg Bwd Segment Size        0.032934
+Fwd Packet Length Mean      0.032772
+Avg Packet Size             0.029815
+Subflow Fwd Bytes           0.028450
+Fwd Act Data Packets        0.026461
+Subflow Bwd Bytes           0.025171
+
+VALUES WRITTEN TO paper_values.tex
+  NTrain         121,868
+  NTest          165,916
+  NFeatures      65
+  NBenignTrain   46,427
+  NBenignTest    51,404
+  RFRandFone     1.000
+  RFNextFone     0.964
+  RFRandFPR      0.0001
+  RFNextFPR      0.0014
+  LRNextFone     0.977
+  DTNextFone     0.968
+  THNextFone     0.000
+  THNextFPR      0.0011
+  UnseenNames    DNS, NTP, SNMP, TFTP, WEBDDOS
+  UnseenRecall   0.786
+  SeenRecall     0.705
+  FAdayOne       nan
+  FAdayTen       nan
+  FAdaySixty     nan
+  FAdayOneKfive  nan
+  DelayOne       nan
+  DelayTen       nan
+  DelaySixty     nan
